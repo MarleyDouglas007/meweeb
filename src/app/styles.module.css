@@ -1,0 +1,48 @@
+.container_header {
+  border: 1px solid #fff;
+
+  width: 1920px;
+}
+
+.container_nav {
+  border: 1px solid #fff;
+  
+  display:flex;
+  justify-content: space-between;
+  align: center;
+
+  width: 1800px;
+  height: 112px;
+
+  margin-left: 50px;
+
+  font-size:50px;
+}
+.m {
+  background: linear-gradient(135deg, #9747ff 27.36%, #1da1f2 44.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size:50px;
+
+
+}
+
+.w {
+    background: linear-gradient(135deg, #9747FF 27.36%, #1DA1F2 44.84%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    font-size:50px;
+
+ 
+  }
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap:70px;
+}

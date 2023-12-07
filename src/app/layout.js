@@ -7,42 +7,73 @@ export const metadata = {
   title: 'Me Weeb',
 }
 
-function Logo({x, y}){
+function Logo({}){
   return (
-    <p style={{left: x, top: y }} className={styles.logo}>Me<></>Weeb<span></span></p>
+    <p className={styles.logo}><span className={styles.m}>M</span>e <br/> <span className={styles.w}>W</span>eeb</p>
     
   );
 }
 
 function ItemMenu({nome}){
   return(
-   
     <p className={styles.itemMenu}>{nome}</p>
-  )
+  );
+}
+
+function Menu({children}){
+  return(
+    <ul className={styles.menu}>
+      {children.map((itemMenu) => (
+        <li key={itemMenu.nome}>{itemMenu}</li>
+      ))}
+    </ul>
+  );
 }
 
 function Premium(){
   return(
-    <div>
+    <>
       <Image></Image>
-      <p>Premium</p>
-    </div>
+      <p className={styles.premium}>Premium</p>
+    </>
   )
 } 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Logo></Logo>
-        <ItemMenu nome="Genre"/>
-        <ItemMenu nome="Movies"/>
-        <ItemMenu nome="ONAs"/>
-        <ItemMenu nome="News"/>
-        <Premium></Premium>
+      <body className={styles.corpo}>
+        <header>
+          <div className={styles.container_header}>
+            
+            <div className={styles.container_nav}>
+
+              <div className={styles.Logo}>
+              <Logo x={70} y={58}/>
+              </div>
+
+              <div className={styles.menu}>
+              <ItemMenu nome="Genre"/>
+              <ItemMenu nome="Movies"/>
+              <ItemMenu nome="ONAs"/>
+              <ItemMenu nome="News"/>
+              </div>
+               <Premium/>
+              <div className={styles.premium}>
+
+              </div>
+            </div>
+
+          </div>
+        </header>
+        
+       
         <Image></Image>
 
         {/* <Filme imagem={titans} numero="01" nome="Attack on Titan"/> */}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   )
